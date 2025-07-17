@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
 
-const API = "http://localhost:5000/api/todo";
+const API = "https://reminder-app-x3jv.onrender.com/api/todo";
 
 function App() {
   const [todos, setTodos] = useState([]);
