@@ -1,0 +1,205 @@
+/* App.css */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+  overflow: hidden;
+}
+
+.container {
+  background-color: #1a1a2e;
+  padding: 40px 30px;
+  width: 95%;
+  max-width: 850px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(16, 16, 16, 0.4);
+  animation: dropIn 1s ease;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2rem;
+  color: #ffffff;
+  animation: fadeDown 0.8s ease;
+}
+
+/* Form Styling */
+.todo-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.todo-form input,
+.todo-form textarea {
+  flex: 1 1 30%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  transition: 0.3s ease;
+  background-color: #2b2b36;
+  border-color: #fff;
+  color: white;
+  min-width: 180px;
+}
+
+.todo-form input[type="date"] {
+  flex: 1 1 30%;
+}
+
+.todo-form input:focus,
+.todo-form textarea:focus {
+  background-color: #2f2f47;
+  color: white;
+  transform: scale(1.02);
+}
+
+.todo-form button {
+  flex: 1 1 100%;
+  padding: 12px;
+  background-color: #ff6b6b;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s;
+  margin-top: 10px;
+}
+
+.todo-form button:hover {
+  background-color: #ff4757;
+  transform: scale(1.05);
+}
+
+/* Todo Item Styling */
+.todo-item {
+  background-color: #2f2f47;
+  padding: 16px;
+  border-radius: 12px;
+  margin-top: 15px;
+  animation: fadeInUp 0.6s ease;
+  transition: all 0.3s;
+}
+
+.todo-item.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.todo-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.todo-description {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 5px;
+}
+
+.todo-date {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* Action Buttons */
+.todo-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.todo-actions button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.todo-actions .delete-btn {
+  background-color: #ff4757;
+  color: white;
+}
+
+.todo-actions .delete-btn:hover {
+  background-color: #e84118;
+}
+
+.todo-actions .toggle-btn {
+  background-color: #1dd1a1;
+  color: white;
+}
+
+.todo-actions .toggle-btn:hover {
+  background-color: #10ac84;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dropIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .todo-form {
+    flex-direction: column;
+  }
+
+  .todo-form input,
+  .todo-form textarea,
+  .todo-form button {
+    flex: 1 1 100%;
+  }
+}
