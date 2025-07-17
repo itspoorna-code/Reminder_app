@@ -67,7 +67,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>To do</h1>
+      <h1>Reminders</h1>
 
       <form onSubmit={handleSubmit} className="todo-form">
         <input
